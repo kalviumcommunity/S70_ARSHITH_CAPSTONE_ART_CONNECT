@@ -3,7 +3,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Mail, Lock, LogIn } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
@@ -19,8 +26,10 @@ const Login = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate login (placeholder for actual backend logic)
+    // This is a placeholder for actual authentication logic
+    // In a real application, you would connect this to your backend
     setTimeout(() => {
+      // Simulate successful login
       localStorage.setItem('isAuthenticated', 'true');
       localStorage.setItem('user', JSON.stringify({ email, name: email.split('@')[0] }));
 
@@ -49,11 +58,11 @@ const Login = () => {
               <Label htmlFor="email">Email</Label>
               <div className="relative">
                 <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                <Input 
-                  id="email" 
-                  type="email" 
-                  placeholder="name@example.com" 
-                  className="pl-10" 
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="name@example.com"
+                  className="pl-10"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -69,10 +78,10 @@ const Login = () => {
               </div>
               <div className="relative">
                 <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                <Input 
-                  id="password" 
-                  type="password" 
-                  className="pl-10" 
+                <Input
+                  id="password"
+                  type="password"
+                  className="pl-10"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -116,7 +125,7 @@ const Login = () => {
 
           <Button variant="outline" className="w-full">
             <svg className="mr-2 h-4 w-4" aria-hidden="true" viewBox="0 0 24 24">
-              <path d="M12.0001 2C6.4771 2 2.0001 6.477 2.0001 12C2.0001 17.523 6.4771 22 12.0001 22C17.5231 22 22.0001 17.523 22.0001 12C22.0001 6.477 17.5231 2 12.0001 2ZM4.0001 12C4.0001 7.582 7.5821 4 12.0001 4C14.2131 4 16.2191 4.914 17.6571 6.429L6.4291 17.657C4.9141 16.219 4.0001 14.213 4.0001 12ZM12.0001 20C9.7871 20 7.7811 19.086 6.3431 17.571L17.5711 6.343C19.0861 7.781 20.0001 9.787 20.0001 12C20.0001 16.418 16.4181 20 12.0001 20Z" fill="currentColor"/>
+              <path d="M12.0001 2C6.4771 2 2.0001 6.477 2.0001 12C2.0001 17.523 6.4771 22 12.0001 22C17.5231 22 22.0001 17.523 22.0001 12C22.0001 6.477 17.5231 2 12.0001 2ZM4.0001 12C4.0001 7.582 7.5821 4 12.0001 4C14.2131 4 16.2191 4.914 17.6571 6.429L6.4291 17.657C4.9141 16.219 4.0001 14.213 4.0001 12ZM12.0001 20C9.7871 20 7.7811 19.086 6.3431 17.571L17.5711 6.343C19.0861 7.781 20.0001 9.787 20.0001 12C20.0001 16.418 16.4181 20 12.0001 20Z" fill="currentColor" />
             </svg>
             Sign in with Google
           </Button>
