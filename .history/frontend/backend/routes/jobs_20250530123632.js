@@ -15,19 +15,3 @@ router.get("/portfolios/:userId", async (req, res) => {
   res.status(200).json(portfolios);
 });
 
-const express = require("express");
-const router = express.Router();
-const Job = require("../models/Job");
-
-// POST 
-router.post("/jobs", async (req, res) => {
-  try {
-    const newJob = new Job(req.body);
-    const savedJob = await newJob.save();
-    res.status(201).json(savedJob);
-  } catch (error) {
-    res.status(500).json({ error: "Failed to create job" });
-  }
-});
-
-module.exports = router;
