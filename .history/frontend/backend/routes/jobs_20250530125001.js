@@ -32,7 +32,6 @@ router.post("/jobs", async (req, res) => {
 
 module.exports = router;
 
-// PUT 
 router.put("/jobs/:id", async (req, res) => {
   try {
     const updatedJob = await Job.findByIdAndUpdate(
